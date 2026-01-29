@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-yum update -y
-rpm --import https://yum.corretto.aws/corretto.key 
-curl -L -o /etc/yum.repos.d/corretto.repo https://yum.corretto.aws/corretto.repo
-yum install -y java-11-amazon-corretto-devel
+curl -LO https://corretto.aws/downloads/latest/amazon-corretto-21-x64-linux-jdk.rpm 
+yum install amazon-corretto-21-x64-linux-jdk.rpm  -y --setopt=skip_if_unavailable=true
+rm -f amazon-corretto-21-x64-linux-jdk.rpm
